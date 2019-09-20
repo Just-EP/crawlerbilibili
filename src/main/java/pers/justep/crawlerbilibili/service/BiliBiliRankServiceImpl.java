@@ -13,9 +13,10 @@ import java.util.List;
  * @createtime 2019/09/18 23:15:00
  */
 @Service
-public class BiliBiliRankInfoServiceImpl implements BiliBiliRankInfoService{
+public class BiliBiliRankServiceImpl implements BiliBiliRankService{
     @Override
     public void handleRankInfo(List<BiliBiliRankInfoPojo> rankInfos) {
         //没什么需要处理的,直接调用mapper入库
+
     }
 }

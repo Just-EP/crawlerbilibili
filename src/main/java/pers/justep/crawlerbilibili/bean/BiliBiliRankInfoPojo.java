@@ -2,6 +2,8 @@ package pers.justep.crawlerbilibili.bean;
 
 import lombok.Data;
 
+import java.util.Date;
+
 /**
  * @author JustEP
  * @version 1.0
@@ -11,12 +13,17 @@ import lombok.Data;
  */
 @Data
 public class BiliBiliRankInfoPojo {
-    private String rank;
+    private Integer rank;
     private String title;
     private String videoUrl;
     private String play;
     private String danmaku;
     private String author;
     private String authorUrl;
-    private String score;
+    private Integer score;
+    private String type;
+    private String subType;
+    private String contributeType;
+    private String termType;
+    private Date time;
 }

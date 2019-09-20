@@ -8,10 +8,10 @@ import java.util.List;
  * @author JustEP
  * @version 1.0
  * @classname BiliBiliRankInfoService
- * @description TODO
+ * @description interface
  * @createtime 2019/09/18 23:12:00
  */
-public interface BiliBiliRankInfoService {
+public interface BiliBiliRankService {
     /**
      * 处理RankInfo
      * @param rankInfos 获取的rank数据
