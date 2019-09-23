@@ -8,7 +8,7 @@ import java.util.Date;
  * @author JustEP
  * @version 1.0
  * @classname BiliBiliRankInfoPojo
- * @description TODO
+ * @description 排行榜Bean
  * @createtime 2019/09/18 22:35:00
  */
 @Data
