@@ -28,4 +28,9 @@ public class BiliBiliRankServiceImpl implements BiliBiliRankService{
             mapper.insertRankInfo(rankInfo);
         }
     }
+
+    @Override
+    public List<BiliBiliRankInfoPojo> queryAllRankInfo() {
+        return mapper.queryAllRankInfo();
+    }
 }

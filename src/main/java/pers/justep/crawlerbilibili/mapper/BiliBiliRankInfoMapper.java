@@ -3,6 +3,8 @@ package pers.justep.crawlerbilibili.mapper;
 import org.springframework.stereotype.Repository;
 import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo;
 
+import java.util.List;
+
 /**
  * @author JustEP
  * @version 1.0
@@ -17,4 +19,9 @@ public interface BiliBiliRankInfoMapper {
      * @param rankInfo bean
      * */
     void insertRankInfo(BiliBiliRankInfoPojo rankInfo);
+    /**
+     * 查询所有
+     * @return list
+     * */
+    List<BiliBiliRankInfoPojo> queryAllRankInfo();
 }

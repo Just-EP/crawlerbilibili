@@ -17,4 +17,9 @@ public interface BiliBiliRankService {
      * @param rankInfos 获取的rank数据
      * */
     void handleRankInfo(List<BiliBiliRankInfoPojo> rankInfos);
+    /**
+     * 查询所有
+     * @return beans
+     * */
+    List<BiliBiliRankInfoPojo> queryAllRankInfo();
 }

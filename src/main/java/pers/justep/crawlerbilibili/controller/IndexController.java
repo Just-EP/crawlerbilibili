@@ -1,7 +1,14 @@
 package pers.justep.crawlerbilibili.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo;
+import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoView;
+import pers.justep.crawlerbilibili.service.BiliBiliRankService;
+
+import java.util.List;
 
 /**
  * @author JustEP
@@ -12,8 +19,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
+    private BiliBiliRankService service;
+    @Autowired
+    public void setService(BiliBiliRankService service) {
+        this.service = service;
+    }
+
     @RequestMapping(value = "/index")
     public String index(){
         return "/index";
+    }
+
+    @RequestMapping(value = "/query")
+    @ResponseBody
+    public BiliBiliRankInfoView query(){
+        BiliBiliRankInfoView view = new BiliBiliRankInfoView();
+        List<BiliBiliRankInfoPojo> data = service.queryAllRankInfo();
+        view.setData(data);
+        view.setCode(0);
+        view.setMsg("");
+        view.setCount(data.size());
+        return view;
     }
 }

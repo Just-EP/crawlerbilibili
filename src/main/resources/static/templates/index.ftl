@@ -12,13 +12,6 @@
     </script>
 </head>
 <body>
-<div class="layui-container">
-    <div class="layui-col-md9">
-        你的内容
-    </div>
-    <div class="layui-col-md3">
-        你的内容
-    </div>
-</div>
+<table id="demo"></table>
 </body>
 </html>

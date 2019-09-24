@@ -7,4 +7,7 @@
 INSERT INTO crawlerbilibili_rank_info (rank,title,videoUrl,play,danmaku,author,authorUrl,score,type,subType,contributeType,termType,time)
 VALUES (#{rank},#{title},#{videoUrl},#{play},#{danmaku},#{author},#{authorUrl},#{score},#{type},#{subType},#{contributeType},#{termType},#{time});
 </insert>
+    <select id="queryAllRankInfo" resultType="pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo">
+        SELECT * FROM crawlerbilibili_rank_info;
+    </select>
 </mapper>
