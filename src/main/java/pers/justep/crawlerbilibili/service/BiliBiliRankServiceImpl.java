@@ -41,7 +41,7 @@ public class BiliBiliRankServiceImpl implements BiliBiliRankService{
     @Override
     public BiliBiliRankInfoView queryAllRankInfoByPage(String page, String limit,BiliBiliRankInfoView view) {
         int start = Integer.parseInt(limit)*(Integer.parseInt(page)-1);
-        int end = start+Integer.parseInt(limit);
+        int end = Integer.parseInt(limit);
         List<BiliBiliRankInfoPojo> data = mapper.queryAllRankInfoByPage(start, end);
         int count = mapper.queryAllRankInfoCount();
         view.setData(data);
