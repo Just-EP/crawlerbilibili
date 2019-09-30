@@ -1,6 +1,7 @@
 package pers.justep.crawlerbilibili.service;
 
 import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo;
+import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoView;
 
 import java.util.List;
 
@@ -22,4 +23,12 @@ public interface BiliBiliRankService {
      * @return beans
      * */
     List<BiliBiliRankInfoPojo> queryAllRankInfo();
+    /**
+     * 分页查询,转换分页信息
+     * @param limit 每页显示条数
+     * @param page 当前页数
+     * @param view 返回bean
+     * @return beans
+     * */
+    BiliBiliRankInfoView queryAllRankInfoByPage(String page,String limit,BiliBiliRankInfoView view);
 }

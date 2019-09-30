@@ -1,8 +1,11 @@
 package pers.justep.crawlerbilibili.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo;
+import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoView;
 import pers.justep.crawlerbilibili.mapper.BiliBiliRankInfoMapper;
 
 import java.util.List;
@@ -16,6 +19,7 @@ import java.util.List;
  */
 @Service
 public class BiliBiliRankServiceImpl implements BiliBiliRankService{
+    private Logger logger = LoggerFactory.getLogger(BiliBiliRankServiceImpl.class);
     private BiliBiliRankInfoMapper mapper;
     @Autowired
     public void setMapper(BiliBiliRankInfoMapper mapper) {
@@ -32,5 +36,18 @@ public class BiliBiliRankServiceImpl implements BiliBiliRankService{
     @Override
     public List<BiliBiliRankInfoPojo> queryAllRankInfo() {
         return mapper.queryAllRankInfo();
+    }
+
+    @Override
+    public BiliBiliRankInfoView queryAllRankInfoByPage(String page, String limit,BiliBiliRankInfoView view) {
+        int start = Integer.parseInt(limit)*(Integer.parseInt(page)-1);
+        int end = start+Integer.parseInt(limit);
+        List<BiliBiliRankInfoPojo> data = mapper.queryAllRankInfoByPage(start, end);
+        int count = mapper.queryAllRankInfoCount();
+        view.setData(data);
+        view.setCode(0);
+        view.setMsg("");
+        view.setCount(count);
+        return view;
     }
 }

@@ -4,11 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo;
 import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoView;
 import pers.justep.crawlerbilibili.service.BiliBiliRankService;
-
-import java.util.List;
 
 /**
  * @author JustEP
@@ -32,13 +29,9 @@ public class IndexController {
 
     @RequestMapping(value = "/query")
     @ResponseBody
-    public BiliBiliRankInfoView query(){
+    public BiliBiliRankInfoView query(String page,String limit){
         BiliBiliRankInfoView view = new BiliBiliRankInfoView();
-        List<BiliBiliRankInfoPojo> data = service.queryAllRankInfo();
-        view.setData(data);
-        view.setCode(0);
-        view.setMsg("");
-        view.setCount(data.size());
+        view = service.queryAllRankInfoByPage(page, limit, view);
         return view;
     }
 }

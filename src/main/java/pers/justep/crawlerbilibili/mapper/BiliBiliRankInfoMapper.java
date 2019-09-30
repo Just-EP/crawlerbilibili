@@ -24,4 +24,16 @@ public interface BiliBiliRankInfoMapper {
      * @return list
      * */
     List<BiliBiliRankInfoPojo> queryAllRankInfo();
+    /**
+     * 分页查询
+     * @param start limit开始
+     * @param end limit结束
+     * @return beans
+     * */
+    List<BiliBiliRankInfoPojo> queryAllRankInfoByPage(int start, int end);
+    /**
+     * 查询总数
+     * @return count
+     * */
+    int queryAllRankInfoCount();
 }

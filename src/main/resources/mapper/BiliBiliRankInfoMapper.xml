@@ -3,11 +3,22 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pers.justep.crawlerbilibili.mapper.BiliBiliRankInfoMapper">
-<insert id="insertRankInfo" parameterType="pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo">
-INSERT INTO crawlerbilibili_rank_info (rank,title,videoUrl,play,danmaku,author,authorUrl,score,type,subType,contributeType,termType,time)
-VALUES (#{rank},#{title},#{videoUrl},#{play},#{danmaku},#{author},#{authorUrl},#{score},#{type},#{subType},#{contributeType},#{termType},#{time});
-</insert>
+    <insert id="insertRankInfo" parameterType="pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo">
+        INSERT INTO crawlerbilibili_rank_info (rank, title, videoUrl, play, danmaku, author, authorUrl, score, type,
+                                               subType, contributeType, termType, time)
+        VALUES (#{rank}, #{title}, #{videoUrl}, #{play}, #{danmaku}, #{author}, #{authorUrl}, #{score}, #{type},
+                #{subType}, #{contributeType}, #{termType}, #{time});
+    </insert>
     <select id="queryAllRankInfo" resultType="pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo">
-        SELECT * FROM crawlerbilibili_rank_info;
+        SELECT *
+        FROM crawlerbilibili_rank_info;
+    </select>
+    <select id="queryAllRankInfoByPage" parameterType="int" resultType="pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo">
+        SELECT *
+        FROM crawlerbilibili_rank_info LIMIT #{start},#{end}
+    </select>
+    <select id="queryAllRankInfoCount" resultType="int">
+        SELECT COUNT(1)
+        FROM crawlerbilibili_rank_info
     </select>
 </mapper>

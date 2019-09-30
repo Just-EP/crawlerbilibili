@@ -2,10 +2,10 @@ layui.define(['layer','form','table'],function (exports) {
     var table = layui.table;
     table.render({
         elem: '#demo',
-        height: 312,
-        url: '/query', //数据接口
-        page: true, //开启分页
-        cols: [[ //表头
+        height: 500,
+        url: '/query',
+        page: true,
+        cols: [[
             {field: 'rank', title: '排名', width:80, sort: true}
             ,{field: 'title', title: '视频标题', width:160}
             ,{field: 'videoUrl', title: '视频链接', width:160}
