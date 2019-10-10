@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="utf-8">
@@ -6,11 +6,7 @@
     <title>layout 后台大布局 - Layui</title>
     <link rel="stylesheet" href="../layui/css/layui.css">
     <script src="../layui/layui.js"></script>
-    <script>
-        layui.config({
-            base:'js/'
-        }).use('index');
-    </script>
+    <script src="../js/flv.min.js"></script>
     <script>
         layui.use('element', function(){
             //var element = layui.element;
@@ -57,8 +53,8 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:">所有商品</a>
                     <dl class="layui-nav-child">
-                        <dd class="layui-this"><a href="/index">排行榜数据表格</a></dd>
-                        <dd><a href="/flv">flv.js</a></dd>
+                        <dd><a href="/index">排行榜数据表格</a></dd>
+                        <dd class="layui-this"><a href="javascript:">flv.js</a></dd>
                         <dd><a href="javascript:">列表三</a></dd>
                         <dd><a href="">超链接</a></dd>
                     </dl>
@@ -77,7 +73,21 @@
         </div>
     </div>
     <div class="layui-body">
-        <div style="padding: 15px;"><table id="demo"></table></div>
+        <div style="padding: 15px;">
+            <video id="videoElement"></video>
+            <script>
+                if (flvjs.isSupported()) {
+                    var videoElement = document.getElementById('videoElement');
+                    var flvPlayer = flvjs.createPlayer({
+                        type: 'flv',
+                        url: '../videos/test.FLV'
+                    });
+                    flvPlayer.attachMediaElement(videoElement);
+                    flvPlayer.load();
+                    flvPlayer.play();
+                }
+            </script>
+        </div>
     </div>
 
     <div class="layui-footer">

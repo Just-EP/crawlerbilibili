@@ -34,4 +34,8 @@ public class IndexController {
         view = service.queryAllRankInfoByPage(page, limit, view);
         return view;
     }
+    @RequestMapping(value = "/flv")
+    public String showFlv(){
+        return "/flv";
+    }
 }
