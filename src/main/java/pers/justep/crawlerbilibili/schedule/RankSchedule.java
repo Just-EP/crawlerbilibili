@@ -25,7 +25,6 @@ public class RankSchedule {
     public void setRankCrawler(RankCrawler rankCrawler) {
         this.rankCrawler = rankCrawler;
     }
-    @Scheduled(cron = "0 37 * * * ? ")
     public void start(){
         Spider.create(rankCrawler).setDownloader(new HttpClientDownloader()).addUrl("https://www.bilibili.com/ranking/all/1/1/3/").thread(5).run();
     }

@@ -15,7 +15,7 @@ import java.util.Properties;
  * @description 复读bot
  * @createtime 2019/10/22 22:12:00
  */
-@Component
+//@Component
 public class RepeatBot extends TelegramLongPollingBot {
     private static String bot_token =  null;
     private static String bot_name =  null;
