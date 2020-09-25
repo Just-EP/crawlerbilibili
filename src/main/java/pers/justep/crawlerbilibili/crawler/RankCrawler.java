@@ -3,7 +3,6 @@ package pers.justep.crawlerbilibili.crawler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import pers.justep.crawlerbilibili.bean.BiliBiliRankInfoPojo;
 import pers.justep.crawlerbilibili.service.BiliBiliRankService;
@@ -19,9 +18,7 @@ import java.util.List;
 /**
  * @author JustEP
  * @version 1.0
- * @classname DemoCrawler
- * @description 排行榜爬虫
- * @createtime 2019/09/17 22:03:00
+ * @date 2019/09/17 22:03:00
  */
 @Component
 public class RankCrawler implements PageProcessor {

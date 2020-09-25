@@ -16,9 +16,8 @@ import java.util.Properties;
 /**
  * @author JustEP
  * @version 1.0
- * @classname CommonBot
- * @description 接收发送信息Bot
- * @createtime 2019/10/22 22:12:00
+ * @date 2019/10/22 22:12:00
+ * 接收发送信息Bot
  */
 @Component
 public class CommonBot extends TelegramLongPollingBot {
